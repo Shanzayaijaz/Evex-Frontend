@@ -177,7 +177,7 @@ export default function ProfilePage() {
     } catch (error: unknown) {
       const apiError = error as { response?: { data?: { error?: string } } };
       console.error('Error updating profile:', error);
-      alert(error.response?.data?.error || 'Error updating profile. Please try again.');
+      alert(apiError.response?.data?.error || 'Error updating profile. Please try again.');
     } finally {
       setSaving(false);
     }
